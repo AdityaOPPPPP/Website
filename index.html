@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend SMP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="bold-text">Purchase Ranks & Coins via Discord Ticket!</span>
+            <button class="ticket-button">Click Here</button>
+        </div>
+    </header>
+
+    <section class="background-image">
+        <div class="container">
+            <img src="legend_smp.png" alt="s">
+            <div class="copy-box">
+                <p class="server-ip" onclick="openPopup()"><i class="fas fa-fire"></i> in12.minerhost.com:1027</p>
+                <button class="copy-button" onclick="copyToClipboard()">Click to Copy</button>
+            </div>
+            <div class="discord-box">
+                <a class="discord-server-ip" href="https://discord.gg/rmJG3qXwyr" target="_blank">
+                    <i class="fab fa-discord"></i> Discord Server
+                </a>
+                <a class="discord-button" href="https://discord.gg/rmJG3qXwyr" target="_blank">Click to Join</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="logoutContainer" style="display: none;">
+        <button class="logout-button" onclick="openLogoutPopup()">Logout</button>
+    </div>
+
+    <div id="loginPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginPopup()">&times;</span>
+            <p>Please enter your username to continue</p>
+            <p>Usernames can't contain spaces, they can have any letter and number, and they are Case Sensitive.</p>
+            <input type="text" id="usernameInput" placeholder="Enter your username" />
+            <button class="continue-button" onclick="continueLogin()">Continue</button>
+        </div>
+    </div>
+
+    <div id="logoutPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogoutPopup()">&times;</span>
+            <p>Are you sure you want to log out?</p>
+            <button class="yes-button" onclick="logout()">Yes</button>
+            <button class="no-button" onclick="closeLogoutPopup()">No</button>
+        </div>
+    </div>
+
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>in12.minerhost.com:1027</p>
+            <p>We hope to see you online soon!</p>
+            <button class="ok-button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <section id="products" class="products">
+        <h2>Ranks</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="king.png" alt="Product 1">
+                <h3>King</h3>
+                <p>$1.78 / 150 INR</p>
+                <button onclick="openKingPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="vip.png" alt="Product 2">
+                <h3>VIP</h3>
+                <p>$1.43 / 120 INR</p>
+                <button onclick="openVIPPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="deadliest.png" alt="Product 3">
+                <h3>Deadliest</h3>
+                <p>$1.07 / 90 INR</p>
+                <button onclick="openDeadliestPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="original_gangster.png" alt="Product 4">
+                <h3>OG</h3>
+                <p>$0.59 / 50 INR</p>
+                <button onclick="openOGPopup()">Click for more</button>
+            </div>
+ </div>
+    </section>
+
+    <section class="hero">
+        <h1 class="welcome">WELCOME TO THE OFFICIAL</h1>
+        <h3 class="legend">WEBSITE OF LEGEND SMP</h3>
+        <p>Your one-stop shop for Minecraft server products!</p>
+        <button>Shop Now</button>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="before-refund">Refund Policy</h2>
+        <p>All payments are final and non-refundable. Attempting a chargeback or opening a PayPal dispute will result in permanent and irreversible banishment from all of our servers, and other minecraft stores.</p>
+
+        <p>It could take between 1-20 minutes for your purchase to be credited in-game. If you are still not credited after this time period, please open a support ticket on our discord server with proof of purchase and we will look into your issue.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="before-contact">Contact Us</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Legend SMP website. All rights reserved.</p>
+    </footer>
+
+    <div id="kingPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeKingPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="king.png" alt="King Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Create up to 15 Auction House Listings</li>
+                        <li>♦ Set up to 18 Homes</li>
+                        <li>♦ ACE Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /bezooka</li>
+                        <li>♦ Access to do /workbench</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /condense</li>
+                        <li>♦ Access to do /pweather</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim ace</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 2000 Coins</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of FireMC.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="vipPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVIPPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="vip.png" alt="VIP Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 10 Auction House Listings</li>
+                        <li>♦ Set up to 12 Homes</li>
+                        <li>♦ DEADLIEST Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /enderchest</li>
+                        <li>♦ Access to do /pweather</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim deadliest</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 1000 Coins</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of FireMC.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="deadliestPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeadliestPopup()">&times;</span>
+            <div class=" popup-container">
+                <img src="deadliest.png" alt="Deadliest Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 5 Auction House Listings</li>
+                        <li>♦ Set up to 6 Homes</li>
+                        <li>♦ DEADLIEST Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim deadliest</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 500 Coins</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ogPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOGPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="original_gangster.png" alt="OG Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 4 Auction House Listings</li>
+                        <li>♦ Set up to 4 Homes</li>
+                        <li>♦ DEADLIEST Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /kit claim deadliest</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 500 Coins</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of FireMC.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

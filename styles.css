@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* Color Palette */
+:root {
+    --primary-color: #f5a843; /* Main color */
+    --secondary-color: #3d2a11; /* Button color */
+    --background-color: #252229; /* Background color */
+    --hover-color: #e64a19; /* Hover color for buttons */
+    --text-color: white; /* Text color */
+    --link-color: #7289da; /* Link color */
+    --hover-link-color: #5b6eae; /* Hover color for links */
+}
+
+/* Global Styles */
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.bold-text {
+    font-size: 18px; /* Decrease text size */
+    font-weight: bold; /* Make text bold */
+    margin-right: 10px; /* Space between text and button */
+}
+
+/* Background Image */
+.background-image {
+    background: url(' background_image.png') no-repeat center center/cover; /* Set the background image */
+    height: 500px; /* Adjust height as needed */
+    position: relative;
+    z-index: 1; /* Ensure it stays behind other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image::before {
+    content: "";
+    background: url('background_image.png') no-repeat center center/cover; /* Set the background image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(2px); /* Apply blur effect to the background image */
+    z-index: 1;
+}
+
+.background-image img {
+    z-index: 2;
+    max-width: 300px; /* Set the maximum width of the image */
+    height: auto;
+    animation: zoom 8s infinite alternate; /* Alternate zoom animation */
+}
+
+/* Zoom Animation */
+@keyframes zoom {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    100% {
+        transform: scale(1.1); /* Zoom in */
+    }
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: rgb(255, 0, 0);
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Hero Section Enhancements */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: white; /* Ensure text is white for better contrast */
+    text-align: center;
+    padding: 80px 20px; /* Adjusted padding for better spacing */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Hero Section Enhancements */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: white; /* Ensure text is white for better contrast */
+    text-align: center;
+    padding: 80px 20px; /* Adjusted padding for better spacing */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Hero Heading Styles */
+.hero h1 {
+    font-size: 2em; /* Increased font size for the main heading */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong shadow for better readability */
+}
+
+.hero h3 {
+    font-size: 1.8em; /* Increased font size for the subheading */
+    color: var(--primary-color); /* Use primary color for emphasis */
+    margin: 10px 0; /* Space above and below the subheading */
+}
+
+/* Hero Paragraph Styles */
+.hero p {
+    font-size: 1.2em; /* Increased font size for paragraph */
+    margin: 20px 0; /* Space above and below the paragraph */
+    line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Shop Now Button */
+.hero button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 20px; /* Increased padding for better touch targets */
+    font-size: 1.2em; /* Increased font size for the button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.hero button:hover {
+    background-color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Refund Policy and Contact Us Section Enhancements */
+.about, .contact {
+    padding: 40px 20px; /* Increased padding for better spacing */
+    background-color: rgba(37, 34, 41, 0.9); /* Slightly transparent background for contrast */
+    color: white; /* Ensure text is white for better contrast */
+    border-radius: 10px; /* Rounded corners for the sections */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    text-align: center; /* Center text alignment */
+}
+
+.about h2, .contact h2 {
+    font-size: 2em; /* Increased font size for headings */
+    color: var(--primary-color); /* Use primary color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about p, .contact p {
+    font-size: 1.2em; /* Increased font size for paragraphs */
+    line-height: 1.5; /* Improved line height for readability */
+    margin: 10px 0; /* Space above and below the paragraphs */
+}
+
+/* Products Section */
+.products {
+    padding: 40px 20px; /* Increased padding for better spacing */
+    text-align: center;
+    background-color: rgba(37, 34, 41, 0.9); /* Slightly transparent background for contrast */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.products h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2em; /* Larger font size for the heading */
+}
+
+/* Product List */
+.product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between product items */
+}
+
+/* Product Item */
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgb(84, 26, 31);
+    padding: 15px;
+    width: 220px; /* Adjusted width for better spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* Position for absolute children */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+/* Product Item Hover Effects */
+.product-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+.product-item:hover img {
+    transform: scale(1.05); /* Slightly scale the image on hover */
+}
+
+/* Button Styling */
+.product-item button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Space above the button */
+}
+
+.product-item button:hover {
+    background-color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Product Item Text Styles */
+.product-item h3 {
+    font-size: 1.5em; /* Increase font size for product names */
+    color: var(--primary-color); /* Use primary color for product names */
+    margin: 10px 0; /* Space above and below the product name */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow for better readability */
+}
+
+.product-item p {
+    font-size: 1.2em; /* Increase font size for price */
+    color: #ff972a; /* Use a distinct color for prices */
+    font-weight: bold; /* Make price bold for emphasis */
+    margin: 5px 0; /* Space above and below the price */
+}
+
+/* Button Styling */
+.product-item button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 12px 20px; /* Increased padding for better touch targets */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+    margin-top: 10px; /* Space above the button */
+    font-size: 1em; /* Increase button font size */
+    font-weight: bold; /* Make button text bold */
+}
+
+.product-item button:hover {
+    background-color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Button Styles */
+.ticket-button, .copy-button, .discord-button, .continue-button, .logout-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effects */
+}
+
+.ticket-button:hover, 
+.copy-button:hover, 
+.discord-button:hover, 
+.continue-button:hover, 
+.logout-button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Links */
+ .discord-server-ip {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.discord-server-ip:hover {
+    color: var(--hover-link-color); /* Change link color on hover */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between the image and the box */
+    align-items: center;
+    position: relative; /* Positioning relative to parent */
+}
+
+/* Copy Box Styles */
+.copy-box {
+    background-color: rgba(41, 41, 41, 0.9); /* Darker semi-transparent background */
+    border: 2px solid var(--primary-color); /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    position: absolute; /* Positioning relative to parent */
+    left: -450px; /* Distance from the left */
+    bottom: -30px; /* Distance from the bottom */
+    z-index: 3; /* Ensure it is above the background */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.copy-button {
+    background-color: var(--primary-color); /* Button color */
+    color: var(--text-color); /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+    display: block; /* Flexbox for icon and text */
+    width: 100%;
+    text-align: center;
+}
+
+.copy-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Server IP Text Styles */
+.server-ip {
+    color: #ff972a; /* Distinct color for server IP */
+    font-size: 1.2em; /* Increased font size for better visibility */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    margin-bottom: 10px; /* Space below the IP text */
+}
+
+.copy-box p {
+    margin: 0; /* Remove default margin */
+}
+
+.copy-box p i {
+    margin-right: 8px; /* Adjust the gap between the icon and the text */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease; /* Smooth transition for modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black ;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ok-button {
+    background-color: var(--primary-color); /* Button color */
+    color: var(--text-color); /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+}
+
+/* Discord Box Styles */
+.discord-box {
+    background-color: rgba(41, 41, 41, 0.9); /* Darker semi-transparent background */
+    border: 2px solid #7289da; /* Discord color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    position: absolute; /* Positioning relative to parent */
+    right: -450px; /* Distance from the right */
+    bottom: -30px; /* Distance from the bottom */
+    z-index: 3; /* Ensure it is above the background */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.discord-button {
+    background-color: #7289da; /* Discord button color */
+    color: var(--text-color); /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+    display: block; /* Flexbox for icon and text */
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Discord Link Styles */
+.discord-server-ip {
+    color: #7289da; /* Discord text color */
+    font-size: 1.2em; /* Increased font size for better visibility */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.discord-server-ip:hover {
+    color: var(--hover-link-color); /* Change link color on hover */
+}
+
+/* King Popup Modal Styles */
+.king-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.popup-container {
+    display: flex; /* Flex layout for image and text */
+    align-items: center; /* Center align items vertically */
+}
+
+.king-details {
+    text-align: left; /* Left-align text for better readability */
+}
+
+.add-to-cart {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+}
+
+.modal-content input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the input */
+    margin-top: 10 px; /* Space above the input */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Increased font size for better visibility */
+}
+
+.continue-button {
+    background-color: var(--primary-color); /* Button color */
+    color: var(--text-color); /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.continue-button:hover {
+    background-color: var(--hover-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* VIP Popup Modal Styles */
+.vip-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.vip-details {
+    text-align: left; /* Left-align text for better readability */
+}
+
+/* Deadliest Popup Modal Styles */
+.deadliest-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.deadliest-details {
+    text-align: left; /* Left-align text for better readability */
+}
+
+/* OG Popup Modal Styles */
+.og-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.og-details {
+    text-align: left; /* Left-align text for better readability */
+}
