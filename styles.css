@@ -555,3 +555,80 @@ footer {
 .og-details {
     text-align: left; /* Left-align text for better readability */
 }
+
+.cart {
+    padding: 20px;
+    background-color: rgba(37, 34, 41, 0.9);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+
+#cartItems {
+    margin: 10px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.cart-item button {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between item text and button */
+}
+
+#clearCartButton {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+}
+
+.faq {
+    padding: 40px 20px; /* Padding for spacing */
+    background-color: rgba(37, 34, 41, 0.9); /* Background color */
+    color: white; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin: 20px; /* Margin around the section */
+}
+
+.faq h2 {
+    font-size: 2em; /* Heading font size */
+    color: var(--primary-color); /* Primary color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.faq-item {
+    margin-bottom: 15px; /* Space between FAQ items */
+}
+
+.faq-question {
+    cursor: pointer; /* Pointer cursor for interactivity */
+    display: flex; /* Flex layout for question and plus sign */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center align items */
+}
+
+.plus {
+    font-size: 1.5em; /* Size for the plus sign */
+    transition: transform 0.3s ease; /* Transition for rotation effect */
+}
+
+.faq-answer {
+    margin-top: 10px; /* Space above the answer */
+    padding: 10px; /* Padding for the answer */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly different background for answers */
+    border-radius: 5px; /* Rounded corners for answers */
+}
