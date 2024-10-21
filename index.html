@@ -93,23 +93,66 @@
  </div>
     </section>
 
+    <section id="products" class="products">
+        <h2>Custom Items</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="dragon_head.png" alt="Product 1">
+                <h3>Dragon head with Speed effect</h3>
+                <p>$1.78 / 150 INR</p>
+                <button onclick="addToCart('Dragon head with Speed effect', 1.78)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="knockback_stick.png" alt="Product 3">
+                <h3>Knockback Stick</h3>
+                <p>$1.07 / 90 INR</p>
+                <button onclick="addToCart('Knockback Stick', 1.07)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="enchanted_feather.png" alt="Product 4">
+                <h3>Enchanted Feather</h3>
+                <p>$0.59 / 50 INR</p>
+                <button onclick="addToCart('Enchanted Feather', 0.59)">Add to Cart</button>
+            </div>
+ </div>
+    </section>
+
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <p id="cartTotal">Total: $0.00</p>
+        <button id="clearCartButton" onclick="clearCart()">Clear Cart</button>
+        </section>
+
     <section class="hero">
         <h1 class="welcome">WELCOME TO THE OFFICIAL</h1>
         <h3 class="legend">WEBSITE OF LEGEND SMP</h3>
         <p>Your one-stop shop for Minecraft server products!</p>
-        <button>Shop Now</button>
     </section>
 
     <section id="about" class="about">
         <h2 class="before-refund">Refund Policy</h2>
-        <p>All payments are final and non-refundable. Attempting a chargeback or opening a PayPal dispute will result in permanent and irreversible banishment from all of our servers, and other minecraft stores.</p>
+        <p>All payments are final and non-refundable. Attempting a chargeback will result in permanent and irreversible banishment from all of our servers, and other minecraft stores.</p>
 
-        <p>It could take between 1-20 minutes for your purchase to be credited in-game. If you are still not credited after this time period, please open a support ticket on our discord server with proof of purchase and we will look into your issue.</p>
+        <p>It could take tike for your purchase to be credited in-game. If you are still not credited after this time period, please open a support ticket on our discord server with proof of purchase and we will look into your issue.</p>
     </section>
 
     <section id="contact" class="contact">
         <h2 class="before-contact">Contact Us</h2>
         <p>If you have any questions, feel free to reach out!</p>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer('refundAnswer')" class="faq-question">1- Can we get a refund? <span class="plus">+</span></h3>
+            <p id="refundAnswer" class="faq-answer" style="display: none;">A- No, once you buy the rank and after the rank reaches your account, there will be no refund.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer('paymentAnswer')" class="faq-question">2- Will the payment be on the website or in Discord server ticket? <span class="plus">+</span></h3>
+            <p id="paymentAnswer" class="faq-answer" style="display: none;">A- The payment will be in the Discord server ticket.</p>
+        </div>
+        <!-- You can add more FAQs here in the same format -->
     </section>
 
     <footer>
@@ -126,22 +169,23 @@
                     <ul>
                         <li>♦ Create up to 15 Auction House Listings</li>
                         <li>♦ Set up to 18 Homes</li>
-                        <li>♦ King Prefix</li>
+                        <li>♦ KING Prefix</li>
                     </ul>
                     <h3>Commands:</h3>
                     <ul>
                         <li>♦ Access to do /sit</li>
-                        <li>♦ Access to do /bezooka</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /beezooka</li>
                         <li>♦ Access to do /workbench</li>
                         <li>♦ Access to do /disposal</li>
-                        <li>♦ Access to do /condense</li>
                         <li>♦ Access to do /pweather</li>
                         <li>♦ Access to do /hat</li>
                         <li>♦ Access to do /kit claim king</li>
+                        <li>♦ Access to do /enderchest</li>
                     </ul>
                     <h3>Other:</h3>
                     <ul>
-                        <li>♦ 2000 Coins</li>
+                        <li>♦ 800,000 Money</li>
                     </ul>
                     <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
                     <button class="add-to-cart">Add to Cart</button>
@@ -168,13 +212,14 @@
                         <li>♦ Access to do /lay</li>
                         <li>♦ Access to do /enderchest</li>
                         <li>♦ Access to do /pweather</li>
+                        <li>♦ Access to do /workbench</li>
                         <li>♦ Access to do /disposal</li>
                         <li>♦ Access to do /hat</li>
                         <li>♦ Access to do /kit claim vip</li>
                     </ul>
                     <h3>Other:</h3>
                     <ul>
-                        <li>♦ 1000 Coins</li>
+                        <li>♦ 500,000 Money</li>
                     </ul>
                     <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
                     <button class="add-to-cart">Add to Cart</button>
@@ -205,7 +250,7 @@
                     </ul>
                     <h3>Other:</h3>
                     <ul>
-                        <li>♦ 500 Coins</li>
+                        <li>♦ 250,000 Money</li>
                     </ul>
                     <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
                     <button class="add-to-cart">Add to Cart</button>
@@ -234,9 +279,9 @@
                     </ul>
                     <h3>Other:</h3>
                     <ul>
-                        <li>♦ 500 Coins</li>
+                        <li>♦ 150,000 Money</li>
                     </ul>
-                    <p>Note: ♦ This package is valid for the current season of Legends SMP.</p>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
