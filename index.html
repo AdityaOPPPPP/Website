@@ -1,274 +1,293 @@
-// Copy Server IP to Clipboard
-function copyToClipboard() {
-    const serverIP = document.querySelector('.server-ip');
-    const range = document.createRange();
-    range.selectNode(serverIP);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    alert('Server IP copied to clipboard!');
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend SMP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="bold-text">Purchase Ranks & Coins via Discord Ticket!</span>
+            <button class="ticket-button">Click Here</button>
+        </div>
+    </header>
 
-// Open Popup
-function openPopup() {
-    const popupModal = document.getElementById('popupModal');
-    popupModal.style.display = 'block';
-}
+    <section class="background-image">
+        <div class="container">
+            <img src="legend_smp.png" alt="s">
+            <div class="copy-box">
+                <p class="server-ip" onclick="openPopup()"><i class="fas fa-fire"></i> in12.minerhost.com:1027</p>
+                <button class="copy-button" onclick="copyToClipboard()">Click to Copy</button>
+            </div>
+            <div class="discord-box">
+                <a class="discord-server-ip" href="https://discord.gg/rmJG3qXwyr" target="_blank">
+                    <i class="fab fa-discord"></i> Discord Server
+                </a>
+                <a class="discord-button" href="https://discord.gg/rmJG3qXwyr" target="_blank">Click to Join</a>
+            </div>
+        </div>
+    </section>
 
-// Close Popup
-function closePopup() {
-    const popupModal = document.getElementById('popupModal');
-    popupModal.style.display = 'none';
-}
+    <div id="logoutContainer" style="display: none;">
+        <button class="logout-button" onclick="openLogoutPopup()">Logout</button>
+    </div>
 
-// Open Logout Popup
-function openLogoutPopup() {
-    const logoutPopup = document.getElementById('logoutPopup');
-    logoutPopup.style.display = 'block';
-}
+    <div id="loginPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginPopup()">&times;</span>
+            <p>Please enter your username to continue</p>
+            <p>Usernames can't contain spaces, they can have any letter and number, and they are Case Sensitive.</p>
+            <input type="text" id="usernameInput" placeholder="Enter your username" />
+            <button class="continue-button" onclick="continueLogin()">Continue</button>
+        </div>
+    </div>
 
-// Close Logout Popup
-function closeLogoutPopup() {
-    const logoutPopup = document.getElementById('logoutPopup');
-    logoutPopup.style.display = 'none';
-}
+    <div id="logoutPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogoutPopup()">&times;</span>
+            <p>Are you sure you want to log out?</p>
+            <button class="yes-button" onclick="logout()">Yes</button>
+            <button class="no-button" onclick="closeLogoutPopup()">No</button>
+        </div>
+    </div>
 
-// Logout
-function logout() {
-    closeLogoutPopup();
-    alert('You have been logged out.');
-}
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>in12.minerhost.com:1027</p>
+            <p>We hope to see you online soon!</p>
+            <button class="ok-button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
-// Open King Popup
-function openKingPopup() {
-    const kingPopup = document.getElementById('kingPopup');
-    kingPopup.style.display = 'block';
-}
+    <section id="products" class="products">
+        <h2>Ranks</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="king.png" alt="Product 1">
+                <h3>King</h3>
+                <p>$1.78 / 150 INR</p>
+                <button onclick="openKingPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="vip.png" alt="Product 2">
+                <h3>VIP</h3>
+                <p>$1.43 / 120 INR</p>
+                <button onclick="openVIPPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="deadliest.png" alt="Product 3">
+                <h3>Deadliest</h3>
+                <p>$1.07 / 90 INR</p>
+                <button onclick="openDeadliestPopup()">Click for more</button>
+            </div>
+            <div class="product-item">
+                <img src="original_gangster.png" alt="Product 4">
+                <h3>OG</h3>
+                <p>$0.59 / 50 INR</p>
+                <button onclick="openOGPopup()">Click for more</button>
+            </div>
+ </div>
+    </section>
 
-// Close King Popup
-function closeKingPopup() {
-    const kingPopup = document.getElementById('kingPopup');
-    kingPopup.style.display = 'none';
-}
+    <section id="products" class="products">
+        <h2>Custom Items</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="dragon_head.png" alt="Product 1">
+                <h3>Dragon head with Speed effect</h3>
+                <p>$1.78 / 150 INR</p>
+                <button onclick="addToCart('Dragon head with Speed effect', 1.78)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="knockback_stick.png" alt="Product 3">
+                <h3>Knockback Stick</h3>
+                <p>$1.07 / 90 INR</p>
+                <button onclick="addToCart('Knockback Stick', 1.07)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="enchanted_feather.png" alt="Product 4">
+                <h3>Enchanted Feather</h3>
+                <p>$0.59 / 50 INR</p>
+                <button onclick="addToCart('Enchanted Feather', 0.59)">Add to Cart</button>
+            </div>
+ </div>
+    </section>
 
-// Open VIP Popup
-function openVIPPopup() {
-    const vipPopup = document.getElementById('vipPopup');
-    vipPopup.style.display = 'block';
-}
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <p id="cartTotal">Total: $0.00</p>
+        <button id="clearCartButton" onclick="clearCart()">Clear Cart</button>
+        </section>
 
-// Close VIP Popup
-function closeVIPPopup() {
-    const vipPopup = document.getElementById('vipPopup');
-    vipPopup.style.display = 'none';
-}
+    <section class="hero">
+        <h1 class="welcome">WELCOME TO THE OFFICIAL</h1>
+        <h3 class="legend">WEBSITE OF LEGEND SMP</h3>
+        <p>Your one-stop shop for Minecraft server products!</p>
+    </section>
 
-// Open Deadliest Popup
-function openDeadliestPopup() {
-    const deadliestPopup = document.getElementById('deadliestPopup');
-    deadliestPopup.style.display = 'block';
-}
+    <section id="about" class="about">
+        <h2 class="before-refund">Refund Policy</h2>
+        <p>All payments are final and non-refundable. Attempting a chargeback will result in permanent and irreversible banishment from all of our servers, and other minecraft stores.</p>
 
-// Close Deadliest Popup
-function closeDeadliestPopup() {
-    const deadliestPopup = document.getElementById('deadliestPopup');
-    deadliestPopup.style.display = 'none';
-}
+        <p>It could take tike for your purchase to be credited in-game. If you are still not credited after this time period, please open a support ticket on our discord server with proof of purchase and we will look into your issue.</p>
+    </section>
 
-// Open OG Popup
-function openOGPopup() {
-    const ogPopup = document.getElementById('ogPopup');
-    ogPopup.style.display = 'block';
-}
+    <section id="contact" class="contact">
+        <h2 class="before-contact">Contact Us</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+    </section>
 
-// Close OG Popup
-function closeOGPopup() {
-    const ogPopup = document.getElementById('ogPopup');
-    ogPopup.style.display = 'none';
-}
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer('refundAnswer')" class="faq-question">1- Can we get a refund? <span class="plus">+</span></h3>
+            <p id="refundAnswer" class="faq-answer" style="display: none;">A- No, once you buy the rank and after the rank reaches your account, there will be no refund.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer('paymentAnswer')" class="faq-question">2- Will the payment be on the website or in Discord server ticket? <span class="plus">+</span></h3>
+            <p id="paymentAnswer" class="faq-answer" style="display: none;">A- The payment will be in the Discord server ticket.</p>
+        </div>
+        <!-- You can add more FAQs here in the same format -->
+    </section>
 
-// Add Event Listeners to "Click for more" Buttons
-document.querySelectorAll('.product-item button').forEach(button => {
-    button.addEventListener('click', function() {
-        const rankName = this.parentElement.querySelector('h3').innerText;
-        if (rankName === 'King') {
-            openKingPopup();
-        } else if (rankName === 'VIP') {
-            openVIPPopup();
-        } else if (rankName === 'Deadliest') {
-            openDeadliestPopup();
-        } else if (rankName === 'OG') {
-            openOGPopup();
-        }
-    });
-});
+    <footer>
+        <p>&copy; 2024 Legend SMP website. All rights reserved.</p>
+    </footer>
 
-// Close Modals When Clicking Outside
-window.onclick = function(event) {
-    const modals = [
-        'popupModal',
-        'loginPopup',
-        'logoutPopup',
-        'kingPopup',
-        'vipPopup',
-        'deadliestPopup',
-        'ogPopup'
-    ];
-    modals.forEach(modalId => {
-        const modal = document.getElementById(modalId);
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-}
+    <div id="kingPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeKingPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="king.png" alt="King Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Create up to 15 Auction House Listings</li>
+                        <li>♦ Set up to 18 Homes</li>
+                        <li>♦ KING Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /beezooka</li>
+                        <li>♦ Access to do /workbench</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /pweather</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim king</li>
+                        <li>♦ Access to do /enderchest</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 800,000 Money</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-let cart = [];
-let total = 0;
+    <div id="vipPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVIPPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="vip.png" alt="VIP Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 10 Auction House Listings</li>
+                        <li>♦ Set up to 12 Homes</li>
+                        <li>♦ VIP Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /enderchest</li>
+                        <li>♦ Access to do /pweather</li>
+                        <li>♦ Access to do /workbench</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim vip</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 500,000 Money</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// Load cart from localStorage on page load
-window.onload = function() {
-    const storedCart = JSON.parse(localStorage.getItem('cart'));
-    if (storedCart) {
-        cart = storedCart;
-        total = cart.reduce((sum, item) => sum + item.price, 0); // Calculate total
-        updateCart(); // Update cart display
-    }
-};
+    <div id="deadliestPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDeadliestPopup()">&times;</span>
+            <div class=" popup-container">
+                <img src="deadliest.png" alt="Deadliest Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 5 Auction House Listings</li>
+                        <li>♦ Set up to 6 Homes</li>
+                        <li>♦ Deadliest Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /disposal</li>
+                        <li>♦ Access to do /hat</li>
+                        <li>♦ Access to do /kit claim deadliest</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 250,000 Money</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// Function to update the cart display
-function updateCart() {
-    const cartItemsDiv = document.getElementById('cartItems');
-    cartItemsDiv.innerHTML = ''; // Clear previous items
-    cart.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `${item.username} wants ${item.name} - $${item.price.toFixed(2)} 
-            <button onclick="removeFromCart(${index})">Remove</button>`;
-        cartItemsDiv.appendChild(cartItem);
-    });
-    document.getElementById('cartTotal').innerText = `Total: $${total.toFixed(2)}`;
-}
+    <div id="ogPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOGPopup()">&times;</span>
+            <div class="popup-container">
+                <img src="original_gangster.png" alt="OG Rank" class="king-image">
+                <div class="king-details">
+                    <h3>Perks:</h3>
+                    <ul>
+                        <li>♦ Up to 4 Auction House Listings</li>
+                        <li>♦ Set up to 4 Homes</li>
+                        <li>♦ OG Prefix</li>
+                    </ul>
+                    <h3>Commands:</h3>
+                    <ul>
+                        <li>♦ Access to do /sit</li>
+                        <li>♦ Access to do /lay</li>
+                        <li>♦ Access to do /kit claim og</li>
+                    </ul>
+                    <h3>Other:</h3>
+                    <ul>
+                        <li>♦ 150,000 Money</li>
+                    </ul>
+                    <p>Note: ♦ This package is valid for the current season of Legend SMP.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// Function to remove item from cart
-function removeFromCart(index) {
-    total -= cart[index].price; // Subtract the price of the item being removed
-    cart.splice(index, 1); // Remove item from cart array
-    updateCart(); // Update cart display
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
-}
-
-// Function to clear the cart
-function clearCart() {
-    cart = []; // Empty the cart array
-    total = 0; // Reset total
-    updateCart(); // Update cart display
-    localStorage.removeItem('cart'); // Remove cart from localStorage
-}
-
-// Function to add item to cart
-function addToCart(rankName, price) {
-    const username = prompt("Please enter your username:"); // Prompt for username
-    if (username) { // Check if username is provided
-        cart.push({ name: rankName, price: price, username: username });
-        total += price;
-        updateCart();
-        localStorage.setItem('cart', JSON.stringify(cart)); // Store cart in localStorage
-    } else {
-        alert("Username is required to add an item to the cart."); // Alert if no username is provided
-    }
-}
-
-// Open King Popup
-function openKingPopup() {
-    const kingPopup = document.getElementById('kingPopup');
-    kingPopup.style.display = 'block';
-}
-
-// Close King Popup
-function closeKingPopup() {
-    const kingPopup = document.getElementById('kingPopup');
-    kingPopup.style.display = 'none';
-}
-
-// Open VIP Popup
-function openVIPPopup() {
-    const vipPopup = document.getElementById('vipPopup');
-    vipPopup.style.display = 'block';
-}
-
-// Close VIP Popup
-function closeVIPPopup() {
-    const vipPopup = document.getElementById('vipPopup');
-    vipPopup.style.display = 'none';
-}
-
-// Open Deadliest Popup
-function openDeadliestPopup() {
-    const deadliestPopup = document.getElementById('deadliestPopup');
-    deadliestPopup.style.display = 'block';
-}
-
-// Close Deadliest Popup
-function closeDeadliestPopup() {
-    const deadliestPopup = document.getElementById('deadliestPopup');
-    deadliestPopup.style.display = 'none';
-}
-
-// Open OG Popup
-function openOGPopup() {
-    const ogPopup = document.getElementById('ogPopup');
-    ogPopup.style.display = 'block';
-}
-
-// Close OG Popup
-function closeOGPopup() {
-    const ogPopup = document.getElementById('ogPopup');
-    ogPopup.style.display = 'none';
-}
-
-// Add Event Listeners to "Click for more" Buttons
-document.querySelectorAll('.product-item button').forEach(button => {
-    button.addEventListener('click', function() {
-        const rankName = this.parentElement.querySelector('h3').innerText;
-        if (rankName === 'King') {
-            openKingPopup();
-        } else if (rankName === 'VIP') {
-            openVIPPopup();
-        } else if (rankName === 'Deadliest') {
-            openDeadliestPopup();
-        } else if (rankName === 'OG') {
-            openOGPopup();
-        }
-    });
-});
-
-// Add Event Listeners for "Add to Cart" Buttons in Popups
-document.querySelector('#kingPopup .add-to-cart').addEventListener('click', function() {
-    addToCart('King Rank', 1.78); // Assuming the price is $1.78
-    closeKingPopup(); // Close the popup after adding to cart
-});
-
-document.querySelector('#vipPopup .add-to-cart').addEventListener('click', function() {
-    addToCart('VIP Rank', 1.43); // Assuming the price is $1.43
-    closeVIPPopup(); // Close the popup after adding to cart
-});
-
-document.querySelector('#deadliestPopup .add-to-cart').addEventListener('click', function() {
-    addToCart('Deadliest Rank', 1.07); // Assuming the price is $1.07
-    closeDeadliestPopup(); // Close the popup after adding to cart
-});
-
-document.querySelector('#ogPopup .add-to-cart').addEventListener('click', function() {
-    addToCart('OG Rank', 0.59); // Assuming the price is $0.59
-    closeOGPopup(); // Close the popup after adding to cart
-});
-
-function toggleAnswer(answerId) {
-    const answerElement = document.getElementById(answerId);
-    if (answerElement.style.display === "none" || answerElement.style.display === "") {
-        answerElement.style.display = "block"; // Show the answer
-    } else {
-        answerElement.style.display = "none"; // Hide the answer
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
